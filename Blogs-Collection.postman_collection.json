@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "9eac8056-fa68-496f-b9f1-0f4e2ca5adcf",
+		"name": "Blogs-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29633900"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"password123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Register.php",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Register.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testuser@example.com\",\n    \"password\": \"password123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Login.php",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Login.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Posts.php?user_id=13",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Posts.php"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Your Post Title\",\n    \"content\": \"Your post content goes here.\"\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Posts.php",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Posts.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Hioiii\",\n    \"content\": \"Your post content goes here.\"\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Posts.php?post_id=10",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Posts.php"
+					],
+					"query": [
+						{
+							"key": "post_id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Posts.php?post_id=17",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Posts.php"
+					],
+					"query": [
+						{
+							"key": "post_id",
+							"value": "17"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get post comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Comments.php?post_id=2",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Comments.php"
+					],
+					"query": [
+						{
+							"key": "post_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\"user_id\":\"566\",\n\"post_id\": \"5\",\n    \"comment\": \"hhhhhhhhhh.\"\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Comments.php?post_id=5",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Comments.php"
+					],
+					"query": [
+						{
+							"key": "post_id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit user comments",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\"user_id\":\"566\",\n\"post_id\": \"5\",\n    \"comment\": \"lolololol.\"\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Comments.php?comment_id=2",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Comments.php"
+					],
+					"query": [
+						{
+							"key": "comment_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user comments",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Comments.php?comment_id=1",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Comments.php"
+					],
+					"query": [
+						{
+							"key": "comment_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add post to fav",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 2,\n    \"post_id\": 5\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Fav.php",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Fav.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove from fav",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"post_id\": 7\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://phpweek.local/Controllers/Fav.php",
+					"protocol": "http",
+					"host": [
+						"phpweek",
+						"local"
+					],
+					"path": [
+						"Controllers",
+						"Fav.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
