@@ -25,8 +25,6 @@ if (isset($_SESSION['user_id'])) {
 }
 
 
-// GET METHOD
-// based on user id
 
 // GET METHOD
 // based on user id
@@ -70,14 +68,6 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     }
 }
 
-
-
-
-// POST METHOD
-// based on user id
-
-
-
     // POST METHOD
 // based on user id
 elseif($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -115,8 +105,6 @@ elseif($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-// PUT METHOD
-// based on post id
 // PUT METHOD
 // based on post id
 elseif ($_SERVER["REQUEST_METHOD"] === "PUT") {

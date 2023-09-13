@@ -1,5 +1,4 @@
 <?php
-// comments.php
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -17,8 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     // GET request to retrieve comments by post ID
     if (isset($_GET['post_id'])) {
         $post_id = $_GET['post_id'];
-
-        // ... (rest of your code for retrieving comments)
+// sql query
         $sql = "SELECT 
                     comments.id AS comment_id, 
                     comments.comment, 
@@ -55,8 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     else {
         echo "Missing 'post_id' parameter in the URL.";
     }
-} elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // POST request to add a new comment
+}
+
+// POST request to add a new comment
+
+elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = json_decode(file_get_contents("php://input"));
 
     if (isset($data->user_id, $data->post_id, $data->comment)) {
@@ -88,9 +89,9 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     }
 }
 
+// PUT request to update a comment by comment ID
 
 elseif ($_SERVER["REQUEST_METHOD"] === "PUT") {
-    // PUT request to update a comment by comment ID
     $data = json_decode(file_get_contents("php://input"));
 
     if (isset($_GET['comment_id'], $data->comment)) {
@@ -198,6 +199,6 @@ elseif ($_SERVER["REQUEST_METHOD"] === "DELETE") {
     }
 }
 
-// Close the database connection
+// Close the database connection (should i do ?)
 $dbConnection->close();
 ?>

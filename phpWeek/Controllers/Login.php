@@ -40,10 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 // Close the database connection
 $dbConnection->close();
 
-// Replace this function with your actual authentication logic
+//  authentication logic
 function authenticateUser($email, $password, $dbConnection) {
-    // Query the database to verify user credentials
-    // Example query (replace with your actual query)
+
     $stmt = $dbConnection->prepare("SELECT id FROM users WHERE email = ? AND password = ?");
     $stmt->bind_param("ss", $email, $password);
 
